@@ -15,10 +15,20 @@ export const TasksProvider = ({ children }) => {
         setLoading(!loading)
         const getTaskAPI = async () =>{
             try {
-                const url = 'http://localhost:4000/tasks'
+                const url = ''
                 const response = await fetch(url)
                 const result = await response.json()
-                setTasks(result)
+
+                const loadedStasks = []
+
+                for(const key in result){
+                    loadedStasks.push({
+                      id: key,
+                      title: result[key].title,
+                      description: result[key].description,
+                    })
+                  }
+                setTasks(loadedStasks)
             }catch(error){
                 console.log(error);
             }

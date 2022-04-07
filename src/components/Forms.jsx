@@ -25,7 +25,7 @@ export default function Forms({task}) {
             try{ 
                 let response
                 if(task){
-                    const url = `http://localhost:4000/tasks/${task.id}`
+                    const url = ``
 
                     response = await fetch(url, {
                         method: "PUT",
@@ -35,7 +35,7 @@ export default function Forms({task}) {
                         }
                     })
                 }else{
-                    const url = "http://localhost:4000/tasks"
+                    const url = ""
 
                     response = await fetch(url, {
                         method: "POST",
@@ -116,43 +116,3 @@ export default function Forms({task}) {
 
 
 
-// const initialState = {
-//     title: "",
-//     description: ""
-// };
-
-
-// const handleSubmit = (e) =>{
-//     e.preventDefault();
-//     createTask(task.title, task.description);
-// }
-
-// const handleChange = (e) =>{
-//     setTask({...task, [e.target.name]: e.target.value})
-// }
-
-
-// <form  className="bg-gray-700 p-10 h-2/4 flex flex-col" onSubmit={handleSubmit}>
-//     <h1 className="text-3xl mb-7">Task</h1>
-//     <input 
-//     name="title" 
-//     className="bg-gray-800 focus:text-gray-100 focus:outline-none w-full py-3 px-4 mb-5" 
-//     type="text"
-//     placeholder="Write a title"
-//     autoFocus
-//     onChange={handleChange}
-//     value={task.title}
-//     />
-//     <textarea
-//     name="description"
-//     placeholder="Write a Description"
-//     className="bg-gray-800 focus:text-gray-100 focus:outline-none w-full py-3 px-4 mb-5"
-//     onChange={handleChange}
-//     value={task.description}
-//     ></textarea>
-//     <button
-//     className="bg-green-500 hover:bg-green-400 px-4 py-2 rounded-sm disabled:opacity-30"
-//     >
-//     Save
-//     </button>
-// </form>

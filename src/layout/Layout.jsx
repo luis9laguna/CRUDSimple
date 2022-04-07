@@ -9,7 +9,7 @@ export default function Layout() {
 
     return (
         <div>
-            <header className="flex bg-gray-800 md:px-28 py-5 items-center px-8">
+            <header className=" sticky flex bg-gray-800 md:px-28 py-5 items-center px-8">
                 <h1  className="font-black text-lg">
                     <Link to="/">
                         Task App ({tasks.length})
@@ -26,7 +26,7 @@ export default function Layout() {
 
                 </div>
             </header>
-            <main className="px-28">
+            <main className="px-10" >
             <Outlet />
             </main>
         </div>

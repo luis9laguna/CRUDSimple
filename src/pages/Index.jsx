@@ -14,7 +14,7 @@ export default function Index() {
 
         if(confirmDelete){
             try {
-                const url = `http://localhost:4000/tasks/${id}`
+                const url = ``
                 const response = await fetch(url, {
                     method: 'DELETE'
                 })
@@ -37,14 +37,14 @@ export default function Index() {
                 <VscTasklist size="8rem" />
             </div>
         ) : (
-            <div className="w-7/10 my-20 items-center">
+            <div className="w-7/10 my-20 items-center ">
             {tasks.map((task, i) => (
                 <div
                 key={task.id}
-                className="bg-gray-700 hover:bg-gray-600 cursor-pointer px-0 py-0 m-2 md:px-20 md:py-5 flex flex-col justify-between items-center md:flex-row "
+                className="bg-gray-700 hover:bg-gray-600 cursor-pointer px-0 py-0 m-2 md:px-20 md:py-5 flex flex-col justify-between items-center md:flex-row"
                 >
                     <span className="text-2xl md:mr-10 my-5 md:mt-0">{i + 1}</span>
-                    <div className="flex flex-col mx-10 justify-between items-center">
+                    <div className="flex flex-col mx-10 justify-between items-center text-center">
                         <h1 className="font-bold">{task.title}</h1>    
                         <p className="text-gray-300 max-w-sm text-center">{task.description}</p>
                     </div>
